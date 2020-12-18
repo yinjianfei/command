@@ -1,0 +1,337 @@
+[
+    {
+        "_id": "0_group",
+        "meta": {
+            "is_initialized": 1,
+            "name": "face_platform_camera",
+            "version": "2.0.1"
+        },
+        "attrs": {
+            "_group_path": "0_group:",
+            "group_id": "-2_group",
+            "id": "0_group",
+            "name": "face_platform_camera"
+        }
+    },
+    {
+        "_id": "1_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660be796340001ba2654"
+            },
+            "name": "root"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:",
+            "group_id": "0_group",
+            "id": "1_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "root",
+            "nodeType": "camera_website_root"
+        }
+    },
+    {
+        "_id": "12_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660ce796340001ba2655"
+            },
+            "name": "region 1"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:12_group:",
+            "group_id": "1_group",
+            "id": "12_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 1"
+        }
+    },
+    {
+        "_id": "13_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660ce796340001ba2656"
+            },
+            "name": "region 2"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:13_group:",
+            "group_id": "1_group",
+            "id": "13_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 2"
+        }
+    },
+    {
+        "_id": "14_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660de796340001ba265c"
+            },
+            "name": "region 3"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:12_group:14_group:",
+            "group_id": "12_group",
+            "id": "14_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 3"
+        }
+    },
+    {
+        "_id": "15_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660de796340001ba265e"
+            },
+            "name": "region 4"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:13_group:15_group:",
+            "group_id": "13_group",
+            "id": "15_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 4"
+        }
+    },
+    {
+        "_id": "16_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660de796340001ba265f"
+            },
+            "name": "region 5"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:13_group:16_group:",
+            "group_id": "13_group",
+            "id": "16_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 5"
+        }
+    },
+    {
+        "_id": "17_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660ce796340001ba2657"
+            },
+            "name": "region 6"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:17_group:",
+            "group_id": "1_group",
+            "id": "17_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 6"
+        }
+    },
+    {
+        "_id": "18_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660ce796340001ba2658"
+            },
+            "name": "region 7"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:18_group:",
+            "group_id": "1_group",
+            "id": "18_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 7"
+        }
+    },
+    {
+        "_id": "19_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660de796340001ba2660"
+            },
+            "name": "region 8"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:13_group:19_group:",
+            "group_id": "13_group",
+            "id": "19_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 8"
+        }
+    },
+    {
+        "_id": "20_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660ce796340001ba2659"
+            },
+            "name": "region 9"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:20_group:",
+            "group_id": "1_group",
+            "id": "20_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 9"
+        }
+    },
+    {
+        "_id": "21_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660ce796340001ba265a"
+            },
+            "name": "region 10"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:21_group:",
+            "group_id": "1_group",
+            "id": "21_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 10"
+        }
+    },
+    {
+        "_id": "22_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660de796340001ba265b"
+            },
+            "name": "region 11"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:22_group:",
+            "group_id": "1_group",
+            "id": "22_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 11"
+        }
+    },
+    {
+        "_id": "23_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660de796340001ba265d"
+            },
+            "name": "region 12"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:12_group:23_group:",
+            "group_id": "12_group",
+            "id": "23_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 12"
+        }
+    },
+    {
+        "_id": "24_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660de796340001ba2661"
+            },
+            "name": "region 13"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:13_group:24_group:",
+            "group_id": "13_group",
+            "id": "24_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 13"
+        }
+    },
+    {
+        "_id": "25_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660de796340001ba2662"
+            },
+            "name": "region 14"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:13_group:25_group:",
+            "group_id": "13_group",
+            "id": "25_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "region 14"
+        }
+    },
+    {
+        "_id": "31_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0,
+                "platform_id": "main",
+                "platform_node_id": "5fc2660de796340001ba2663"
+            },
+            "name": "aaip region"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:17_group:31_group:",
+            "group_id": "17_group",
+            "id": "31_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "aaip region"
+        }
+    }
+]

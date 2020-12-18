@@ -1,0 +1,11 @@
+2020-12-03 20:44:01.124 DEBUG 20525 --- [or-http-epoll-3] r.n.http.server.HttpServerOperations     : [id: 0xa8110b59, L:/127.0.0.1:7800 - R:/127.0.0.1:59696] New http connection, requesting read
+2020-12-03 20:44:01.124 DEBUG 20525 --- [or-http-epoll-3] reactor.netty.channel.BootstrapHandlers  : [id: 0xa8110b59, L:/127.0.0.1:7800 - R:/127.0.0.1:59696] Initialized pipeline DefaultChannelPipeline{(BootstrapHandlers$BootstrapInitializerHandler#0 = reactor.netty.channel.BootstrapHandlers$BootstrapInitializerHandler), (reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2020-12-03 20:44:01.125 DEBUG 20525 --- [or-http-epoll-3] r.n.http.server.HttpServerOperations     : [id: 0xa8110b59, L:/127.0.0.1:7800 - R:/127.0.0.1:59696] Increasing pending responses, now 1
+2020-12-03 20:44:01.126 DEBUG 20525 --- [or-http-epoll-3] reactor.netty.http.server.HttpServer     : [id: 0xa8110b59, L:/127.0.0.1:7800 - R:/127.0.0.1:59696] Handler is being applied: org.springframework.http.server.reactive.ReactorHttpHandlerAdapter@3cf61979
+2020-12-03 20:44:01.126 DEBUG 20525 --- [or-http-epoll-3] reactor.netty.channel.FluxReceive        : [id: 0xa8110b59, L:/127.0.0.1:7800 - R:/127.0.0.1:59696] Subscribing inbound receiver [pending: 0, cancelled:false, inboundDone: false]
+2020-12-03 20:44:01.132 DEBUG 20525 --- [or-http-epoll-3] r.n.channel.ChannelOperationsHandler     : [id: 0xa8110b59, L:/127.0.0.1:7800 - R:/127.0.0.1:59696] Writing object DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 157781
+2020-12-03 20:44:01.133 DEBUG 20525 --- [or-http-epoll-3] r.n.channel.ChannelOperationsHandler     : [id: 0xa8110b59, L:/127.0.0.1:7800 - R:/127.0.0.1:59696] Writing object 
+2020-12-03 20:44:01.133 DEBUG 20525 --- [or-http-epoll-3] r.n.channel.ChannelOperationsHandler     : [id: 0xa8110b59, L:/127.0.0.1:7800 - R:/127.0.0.1:59696] Write state change false

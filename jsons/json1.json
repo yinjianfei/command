@@ -1,0 +1,147 @@
+[
+    {
+        "_id": "0_group",
+        "meta": {
+            "is_initialized": 1,
+            "name": "face_platform_camera",
+            "version": "2.0.1"
+        },
+        "attrs": {
+            "_group_path": "0_group:",
+            "group_id": "-2_group",
+            "id": "0_group",
+            "name": "face_platform_camera"
+        }
+    },
+    {
+        "_id": "1_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0
+            },
+            "name": "Root",
+            "nodeType": "camera_website_root"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:",
+            "group_id": "0_group",
+            "id": "1_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "Root",
+            "nodeType": "camera_website_root"
+        }
+    },
+    {
+        "_id": "2_group",
+        "meta": {
+            "nodeType": "camera_outside_system"
+        },
+        "attrs": {
+            "group_id": "0_group",
+            "id": "2_group",
+            "nodeType": "camera_outside_system"
+        }
+    },
+    {
+        "_id": "3_group",
+        "meta": {
+            "meta": {
+                "code": ""
+            },
+            "name": "mcc",
+            "nodeType": "cell_camera_website_root",
+            "user_param": {
+                "gather_source": "cell_1602305839",
+                "origin_id": 2
+            }
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:3_group:",
+            "group_id": "1_group",
+            "id": "3_group",
+            "meta_code": "",
+            "name": "mcc",
+            "nodeType": "cell_camera_website_root"
+        }
+    },
+    {
+        "_id": "4_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0
+            },
+            "name": "Sub_Region1",
+            "user_param": {
+                "gather_source": "cell_1602305839",
+                "origin_id": 4
+            }
+        },
+        "attrs": {
+            "group_id": "3_group",
+            "id": "4_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "Sub_Region1"
+        }
+    },
+    {
+        "_id": "5_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0
+            },
+            "name": "Sub_Region2",
+            "user_param": {
+                "gather_source": "cell_1602305839",
+                "origin_id": 5
+            }
+        },
+        "attrs": {
+            "group_id": "3_group",
+            "id": "5_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "Sub_Region2"
+        }
+    },
+    {
+        "_id": "8_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0
+            },
+            "name": "Loc"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:8_group:",
+            "group_id": "1_group",
+            "id": "8_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "Loc"
+        }
+    },
+    {
+        "_id": "9_group",
+        "meta": {
+            "meta": {
+                "code": "",
+                "division_type": 0
+            },
+            "name": "other"
+        },
+        "attrs": {
+            "_group_path": "0_group:1_group:9_group:",
+            "group_id": "1_group",
+            "id": "9_group",
+            "meta_code": "",
+            "meta_division_type": "0",
+            "name": "other"
+        }
+    }
+]

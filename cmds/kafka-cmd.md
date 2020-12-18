@@ -13,6 +13,7 @@
 ./kafka-consumer-perf-test.sh --broker-list localhost:9092 --topic test --fetch-size 1048576 --messages 18000000 --threads 1
 
 
+ kafka-console-consumer.sh --bootstrap-server node1:9092 --from-beginning --topic new_subject
 
 
 +# list kafka topics, double check

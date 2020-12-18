@@ -1,0 +1,16 @@
+2020-12-03 20:45:00.763 DEBUG 20525 --- [or-http-epoll-5] r.n.http.server.HttpServerOperations     : [id: 0x131d6999, L:/127.0.0.1:7800 - R:/127.0.0.1:60092] New http connection, requesting read
+2020-12-03 20:45:00.763 DEBUG 20525 --- [or-http-epoll-5] reactor.netty.channel.BootstrapHandlers  : [id: 0x131d6999, L:/127.0.0.1:7800 - R:/127.0.0.1:60092] Initialized pipeline DefaultChannelPipeline{(BootstrapHandlers$BootstrapInitializerHandler#0 = reactor.netty.channel.BootstrapHandlers$BootstrapInitializerHandler), (reactor.left.httpCodec = io.netty.handler.codec.http.HttpServerCodec), (reactor.left.httpTrafficHandler = reactor.netty.http.server.HttpTrafficHandler), (reactor.right.reactiveBridge = reactor.netty.channel.ChannelOperationsHandler)}
+2020-12-03 20:45:00.764 DEBUG 20525 --- [or-http-epoll-5] r.n.http.server.HttpServerOperations     : [id: 0x131d6999, L:/127.0.0.1:7800 - R:/127.0.0.1:60092] Increasing pending responses, now 1
+2020-12-03 20:45:00.764 DEBUG 20525 --- [or-http-epoll-5] reactor.netty.http.server.HttpServer     : [id: 0x131d6999, L:/127.0.0.1:7800 - R:/127.0.0.1:60092] Handler is being applied: org.springframework.http.server.reactive.ReactorHttpHandlerAdapter@3cf61979
+2020-12-03 20:45:00.765 DEBUG 20525 --- [or-http-epoll-5] reactor.netty.channel.FluxReceive        : [id: 0x131d6999, L:/127.0.0.1:7800 - R:/127.0.0.1:60092] Subscribing inbound receiver [pending: 0, cancelled:false, inboundDone: false]
+2020-12-03 20:45:00.772 DEBUG 20525 --- [or-http-epoll-5] r.n.channel.ChannelOperationsHandler     : [id: 0x131d6999, L:/127.0.0.1:7800 - R:/127.0.0.1:60092] Writing object DefaultHttpResponse(decodeResult: success, version: HTTP/1.1)
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+Content-Length: 157781
+2020-12-03 20:45:00.773 DEBUG 20525 --- [or-http-epoll-5] r.n.channel.ChannelOperationsHandler     : [id: 0x131d6999, L:/127.0.0.1:7800 - R:/127.0.0.1:60092] Writing object 
+2020-12-03 20:45:00.773 DEBUG 20525 --- [or-http-epoll-5] r.n.channel.ChannelOperationsHandler     : [id: 0x131d6999, L:/127.0.0.1:7800 - R:/127.0.0.1:60092] Write state change false
+2020-12-03 20:45:00.773 DEBUG 20525 --- [or-http-epoll-5] r.n.channel.ChannelOperationsHandler     : [id: 0x131d6999, L:/127.0.0.1:7800 - R:/127.0.0.1:60092] Write state change true
+2020-12-03 20:45:00.774 DEBUG 20525 --- [or-http-epoll-5] r.n.http.server.HttpServerOperations     : [id: 0x131d6999, L:/127.0.0.1:7800 - R:/127.0.0.1:60092] Last HTTP response frame
+2020-12-03 20:45:00.774 DEBUG 20525 --- [or-http-epoll-5] r.n.channel.ChannelOperationsHandler     : [id: 0x131d6999, L:/127.0.0.1:7800 - R:/127.0.0.1:60092] Writing object EmptyLastHttpContent
+2020-12-03 20:45:00.774 DEBUG 20525 --- [or-http-epoll-5] r.n.http.server.HttpServerOperations     : [id: 0x131d6999, L:/127.0.0.1:7800 - R:/127.0.0.1:60092] Decreasing pending responses, now 0
+2020-12-03 20:45:00.774 DEBUG 20525 --- [or-http-epoll-5] r.n.http.server.HttpServerOperations     : [id: 0x131d6999, L:/127.0.0.1:7800 - R:/127.0.0.1:60092] Last Http packet was sent, terminating channel
