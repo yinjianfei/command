@@ -17,3 +17,10 @@ sudo sysctl -w net.ipv4.ip_local_port_range="1024 65535"
 netstat -ano|grep TIME_WAIT|wc -l
 
 watch cat /proc/net/dev 
+
+
+nc -zvw1 18.240.1.100 29000
+
+# tcp dump
+apt-get install tcptump
+tcpdump -i eno1 -vnn dst host X.X.X.X -n -w ping.pcap

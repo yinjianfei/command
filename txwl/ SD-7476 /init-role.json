@@ -1,0 +1,14 @@
+{
+    "condition": {
+        "camera_ids": [
+            "0"
+        ],
+        "start_timestamp": 1,
+        "end_timestamp": 2
+    },
+    "start": 0,
+    "limit": 100,
+    "order": {
+        "timestamp": -1
+    }
+}

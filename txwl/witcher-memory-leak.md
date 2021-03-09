@@ -48,8 +48,17 @@ netty 内存管理 https://www.cnblogs.com/rickiyang/p/13253203.html
 
 jcmd <pid> VM.native_memory detail
 
+//打对象 内存一直增加
+https://github.com/netty/netty/issues/8317
 
 
 ##
 -XX:+UseStringDeduplication
 -XX:+UseG1GC
+
+
+tar -chvf runtime.tar face_platform_runtime/infrastructure/ face_platform_runtime/config/ face_platform_runtime/shared/plugin_module/witcher
+
+把runtime.tar scp到另外一个机器上
+修改face_platform_runtime/shared/plugin_module/witcher
+    /home/jianfei.yin/workspace/witcher/witcher-service/build/libs/witcher-service-0.0.1-SNAPSHOT.jar

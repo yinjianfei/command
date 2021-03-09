@@ -1,0 +1,85 @@
+{
+    "message": "OK",
+    "sets": [
+        {
+            "nodeType": "repository_website_root",
+            "permission_map": {
+                "554": 2,
+                "553": 2,
+                "452": 2,
+                "453": 2,
+                "400": 2,
+                "605": 2,
+                "604": 2,
+                "603": 2,
+                "0": 2,
+                "602": 2,
+                "1": 2,
+                "601": 2,
+                "501": 2,
+                "503": 2,
+                "502": 2,
+                "101": 2,
+                "505": 2,
+                "504": 2,
+                "102": 2
+            },
+            "predecessor_ids": [],
+            "id": 1
+        },
+        {
+            "nodeType": "repository_outside_system",
+            "permission_map": {
+                "0": 2,
+                "1": 2
+            },
+            "predecessor_ids": [],
+            "id": 2
+        }
+    ],
+    "rtn": 0,
+    "results": [
+        {
+            "comment": "",
+            "create_time": 1610691483,
+            "creator": 0,
+            "extra_meta": {},
+            "face_image_num": 0,
+            "failed_picture_num": 0,
+            "id": 0,
+            "is_visible": 1,
+            "last_update_picture_time": 1610691483,
+            "meta": {
+                "is_for_case": true
+            },
+            "name": "案件库",
+            "need_load": 1,
+            "total_picture_num": 0,
+            "type": 1,
+            "permission_map": {
+                "554": 2,
+                "553": 2,
+                "452": 2,
+                "453": 2,
+                "400": 2,
+                "605": 2,
+                "604": 2,
+                "603": 2,
+                "0": 2,
+                "602": 2,
+                "1": 2,
+                "601": 2,
+                "501": 2,
+                "503": 2,
+                "502": 2,
+                "101": 2,
+                "505": 2,
+                "504": 2,
+                "102": 2
+            },
+            "predecessor_ids": [
+                1
+            ]
+        }
+    ]
+}

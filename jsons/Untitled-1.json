@@ -1,0 +1,46 @@
+[
+    {
+        "action": "rename",
+        "nodes": [
+            {
+                "code": "110101001",
+                "name": "东华门街道-new"
+            }
+        ]
+    },
+    {
+        "action": "delete",
+        "nodes": [
+            {
+                "code": "110101001",
+                "name": "东华门街道-new"
+            }
+        ]
+    },
+    {
+        "action": "add",
+        "target": {
+            "code": "110101",
+            "name": "东城区"
+        },
+        "nodes": [
+            {
+                "code": "110101001",
+                "name": "东华门街道-new"
+            }
+        ]
+    },
+    {
+        "action": "merge",
+        "target": {
+            "code": "110101",
+            "name": "东城区"
+        },
+        "nodes": [
+            {
+                "code": "110101001",
+                "name": "东华门街道-new"
+            }
+        ]
+    }
+]

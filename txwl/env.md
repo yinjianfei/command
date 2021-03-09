@@ -4,7 +4,8 @@ fp
 > ssh linuxadmin@10.40.55.163 -p 18022
 ragnaros
 > ssh yituadmin@10.40.86.174 -p 18022    Yitu@123
-
+> 
+https://codex.yitu-inc.com/server/server_sudo
 kv 10.40.40.122
 kv 10.40.88.113
 

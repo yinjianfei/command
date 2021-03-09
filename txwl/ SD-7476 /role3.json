@@ -1,0 +1,291 @@
+[
+    {
+        "_id": "13",
+        "meta": {
+            "password": "1929d90f994ec6838db252e394d7c36c",
+            "meta": {
+                "nodeType": "user_department_single_role1",
+                "createTime": 1573108307,
+                "daily_retrieval_condition": {
+                    "all": {},
+                    "used": {
+                        "24@WJGAWJT_1566473958": 278,
+                        "23@WJGAWJT_1566473958": 278,
+                        "20@WJGAWJT_1566473958": 278,
+                        "22@WJGAWJT_1566473958": 278,
+                        "17@WJGAWJT_1566473958": 278,
+                        "21@WJGAWJT_1566473958": 278,
+                        "25@WJGAWJT_1566473958": 278
+                    },
+                    "last_used_time": 1586531193
+                }
+            },
+            "name": "monitor"
+        },
+        "attrs": {
+            "group_id": "11_group",
+            "name": "monitor",
+            "id": "13"
+        }
+    },
+    {
+        "_id": "15",
+        "meta": {
+            "meta": {
+                "createTime": 1586670347,
+                "daily_retrieval_condition": {
+                    "all": {},
+                    "last_used_time": 1608529808,
+                    "used": {}
+                },
+                "is_advanced": true,
+                "last_password_change_time": 1586670347,
+                "nodeType": "user_department_single_role1",
+                "realName": "opod2019"
+            },
+            "name": "opod001",
+            "password": "b600a454587411a3ca202c7fbf53ea27"
+        },
+        "attrs": {
+            "_group_path": "1_group:3_group:4_group:11_group:15:",
+            "group_id": "11_group",
+            "id": "15",
+            "name": "opod001"
+        }
+    },
+    {
+        "_id": "16",
+        "meta": {
+            "meta": {
+                "createTime": 1586703707,
+                "last_password_change_time": 1586703734,
+                "nodeType": "user_department_single_role1",
+                "realName": "huiju123"
+            },
+            "name": "huiju",
+            "password": "9eefe9fe6c4af244c17a1d2a2714917a"
+        },
+        "attrs": {
+            "_group_path": "1_group:3_group:4_group:11_group:16:",
+            "group_id": "11_group",
+            "id": "16",
+            "name": "huiju"
+        }
+    },
+    {
+        "_id": "20",
+        "meta": {
+            "meta": {
+                "createTime": 1587051169,
+                "is_advanced": true,
+                "last_password_change_time": 1587051169,
+                "nodeType": "user_department_single_role1",
+                "realName": "视图库"
+            },
+            "name": "viid",
+            "password": "472b719a91b355e66c98965ae4dd1d25"
+        },
+        "attrs": {
+            "_group_path": "1_group:3_group:4_group:11_group:20:",
+            "group_id": "11_group",
+            "id": "20",
+            "name": "viid"
+        }
+    },
+    {
+        "_id": "21",
+        "meta": {
+            "meta": {
+                "createTime": 1587178379,
+                "is_advanced": true,
+                "last_password_change_time": 1602464539,
+                "nodeType": "user_department_single_role1",
+                "realName": "依图系统管理员"
+            },
+            "name": "yituadmin",
+            "password": "2cb3115f93727683d1b3905e3f44c672"
+        },
+        "attrs": {
+            "_group_path": "1_group:3_group:4_group:11_group:21:",
+            "group_id": "11_group",
+            "id": "21",
+            "name": "yituadmin"
+        }
+    },
+    {
+        "_id": "22",
+        "meta": {
+            "meta": {
+                "createTime": 1587278813,
+                "daily_retrieval_condition": {
+                    "all": {},
+                    "last_used_time": 1608527573,
+                    "used": {
+                        "17@WJGAWJT_1566473958": 6,
+                        "21@WJGAWJT_1566473958": 6,
+                        "31@WJGAWJT_1566473958": 6,
+                        "32@WJGAWJT_1566473958": 6,
+                        "33@WJGAWJT_1566473958": 6,
+                        "34@WJGAWJT_1566473958": 6,
+                        "36@WJGAWJT_1566473958": 6,
+                        "37@WJGAWJT_1566473958": 6,
+                        "40@WJGAWJT_1566473958": 6,
+                        "41@WJGAWJT_1566473958": 6,
+                        "46@WJGAWJT_1566473958": 6,
+                        "47@WJGAWJT_1566473958": 6,
+                        "49@WJGAWJT_1566473958": 6,
+                        "50@WJGAWJT_1566473958": 6,
+                        "51@WJGAWJT_1566473958": 6,
+                        "52@WJGAWJT_1566473958": 6,
+                        "59@WJGAWJT_1566473958": 6,
+                        "69@WJGAWJT_1566473958": 6,
+                        "75@WJGAWJT_1566473958": 6,
+                        "76@WJGAWJT_1566473958": 6,
+                        "77@WJGAWJT_1566473958": 6,
+                        "78@WJGAWJT_1566473958": 6,
+                        "79@WJGAWJT_1566473958": 6,
+                        "81@WJGAWJT_1566473958": 6,
+                        "82@WJGAWJT_1566473958": 6,
+                        "83@WJGAWJT_1566473958": 6,
+                        "84@WJGAWJT_1566473958": 6
+                    }
+                },
+                "is_advanced": true,
+                "last_password_change_time": 1597192801,
+                "nodeType": "user_department_single_role1",
+                "realName": "海康云平台免密登录 HK@1234"
+            },
+            "name": "HK",
+            "password": "74bee231078b6c1d337fec201bc3bd86"
+        },
+        "attrs": {
+            "_group_path": "1_group:3_group:5_group:24_group:25_group:32_group:22:",
+            "group_id": "32_group",
+            "id": "22",
+            "name": "HK"
+        }
+    },
+    {
+        "_id": "31",
+        "meta": {
+            "meta": {
+                "createTime": 1591595637,
+                "is_advanced": true,
+                "last_password_change_time": 1591595637,
+                "nodeType": "user_department_single_role1",
+                "realName": "省厅人像网关对接rxwg@2020"
+            },
+            "name": "rxwg",
+            "password": "77bfe1406aaa5cb947058a08cf09546e"
+        },
+        "attrs": {
+            "_group_path": "1_group:3_group:5_group:24_group:25_group:32_group:31:",
+            "group_id": "32_group",
+            "id": "31",
+            "name": "rxwg"
+        }
+    },
+    {
+        "_id": "32",
+        "meta": {
+            "meta": {
+                "createTime": 1592918882,
+                "is_advanced": true,
+                "last_password_change_time": 1592918882,
+                "nodeType": "user_department_single_role1",
+                "realName": "临时对接"
+            },
+            "name": "lsdj",
+            "password": "2cb3115f93727683d1b3905e3f44c672"
+        },
+        "attrs": {
+            "_group_path": "1_group:3_group:4_group:11_group:32:",
+            "group_id": "11_group",
+            "id": "32",
+            "name": "lsdj"
+        }
+    },
+    {
+        "_id": "37",
+        "meta": {
+            "meta": {
+                "createTime": 1598495366,
+                "is_advanced": true,
+                "last_password_change_time": 1598495366,
+                "nodeType": "user_department_single_role1",
+                "realName": "1400汇聚"
+            },
+            "name": "huiju180",
+            "password": "602446586071b3d80fdfd178d0eba149"
+        },
+        "attrs": {
+            "_group_path": "1_group:3_group:4_group:11_group:37:",
+            "group_id": "11_group",
+            "id": "37",
+            "name": "huiju180"
+        }
+    },
+    {
+        "_id": "4",
+        "meta": {
+            "meta": {
+                "already_login": true,
+                "createTime": 1569811768,
+                "daily_retrieval_condition": {
+                    "all": {},
+                    "last_used_time": 1608463858,
+                    "used": {}
+                },
+                "last_password_change_time": 1602464864,
+                "nodeType": "user_department_single_role1",
+                "total_grant_condition": {
+                    "all": {},
+                    "last_used_time": 0,
+                    "used": {}
+                }
+            },
+            "name": "admin",
+            "password": "2cb3115f93727683d1b3905e3f44c672"
+        },
+        "attrs": {
+            "_group_path": "1_group:3_group:4_group:11_group:4:",
+            "group_id": "11_group",
+            "id": "4",
+            "name": "admin"
+        }
+    },
+    {
+        "_id": "6",
+        "meta": {
+            "password": "f342ca60f0dba1be59c4dc31d09029ef",
+            "meta": {
+                "nodeType": "user_department_single_role1",
+                "createTime": 1569820748,
+                "realName": "视频网130对接"
+            },
+            "name": "301"
+        },
+        "attrs": {
+            "group_id": "11_group",
+            "name": "301",
+            "id": "6"
+        }
+    },
+    {
+        "_id": "7",
+        "meta": {
+            "password": "c21bc20961346a84324addb961b262e1",
+            "meta": {
+                "nodeType": "user_department_single_role1",
+                "createTime": 1569821421,
+                "realName": "公安网动态对接程序"
+            },
+            "name": "301VIID"
+        },
+        "attrs": {
+            "group_id": "11_group",
+            "name": "301VIID",
+            "id": "7"
+        }
+    }
+]
