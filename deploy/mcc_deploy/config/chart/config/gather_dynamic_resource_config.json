@@ -1,0 +1,15 @@
+{
+    "ignore_meta_fields": [
+        "id",
+        "permission_map",
+        "predecessor_ids"
+    ],
+    "overseas": true,
+    "subordinate_clusters": [
+        {
+            "cluster_id": "CELL_CLUSTER",
+            "mode": "automatic",
+            "blacklist": []
+        }
+    ]
+}

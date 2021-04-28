@@ -1,0 +1,37 @@
+{
+    "default_cluster_config": {
+        "feature_version": 130720300,
+        "fp_version": "MTS.C",
+        "password": "admin123",
+        "pedes_feature_version": 1002540,
+        "user_name": "admin",
+        "vehi_feature_version": 2001040
+    },
+    "subordinate_clusters": [
+        {
+            "cluster_id": "CELL_CLUSTER",
+            "fp_version": "MTS.C"
+        }
+    ],
+    "superior_cluster": {
+        "cluster_id": "FP_CLUSTER",
+        "feature_version": 130720300,
+        "fp_version": "MTS",
+        "password": "admin123",
+        "pedes_feature_version": 1002540,
+        "user_name": "admin",
+        "vehi_feature_version": 2001040
+    },
+    "tool_config": {
+        "complete_keys": [
+            "checkpoint_type",
+            "identification_type"
+        ],
+        "connection_timeout": 10,
+        "login_interval_in_sec": 600,
+        "overseas": true,
+        "p2p_node_ip": "useless config, to be removed",
+        "p2p_port": 7600,
+        "received_timeout": 100
+    }
+}

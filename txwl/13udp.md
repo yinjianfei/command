@@ -1,0 +1,15 @@
+sudo lsof -i udp:67|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-67-command-{} >> 13udp.txt
+sudo lsof -i udp:68|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-68-command-{} >> 13udp.txt
+sudo lsof -i udp:111|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-111-command-{} >> 13udp.txt
+sudo lsof -i udp:137|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-137-command-{} >> 13udp.txt
+sudo lsof -i udp:138|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-138-command-{} >> 13udp.txt
+sudo lsof -i udp:1011|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-1011-command-{} >> 13udp.txt
+sudo lsof -i udp:2049|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-2049-command-{} >> 13udp.txt
+sudo lsof -i udp:8472|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-8472-command-{} >> 13udp.txt
+sudo lsof -i udp:18085|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-18085-command-{} >> 13udp.txt
+sudo lsof -i udp:18086|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-18086-command-{} >> 13udp.txt
+sudo lsof -i udp:18088|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-18088-command-{} >> 13udp.txt
+sudo lsof -i udp:35254|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-35254-command-{} >> 13udp.txt
+sudo lsof -i udp:36382|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-36382-command-{} >> 13udp.txt
+sudo lsof -i udp:53062|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-53062-command-{} >> 13udp.txt
+sudo lsof -i udp:59752|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-59752-command-{} >> 13udp.txt

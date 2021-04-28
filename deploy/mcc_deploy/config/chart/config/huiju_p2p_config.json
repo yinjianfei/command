@@ -1,0 +1,26 @@
+{
+    "config_based_direct_connection": [
+        {
+            "ip": "127.0.0.1",
+            "peer_id": "FP_CLUSTER",
+            "port": 7600
+        }
+    ],
+    "config_based_indirect_connection": [],
+    "influxdb_database": "platform_monitor",
+    "influxdb_measurement": "service_error",
+    "p2p_http_request_base_url": "/p2p",
+    "p2p_http_request_port": 22121,
+    "p2p_service_thread_nums": 64,
+    "p2p_service_buffer_size": 1024,
+    "p2p_http_request_timeout": 100,
+    "p2p_http_connect_timeout": 10,
+    "p2p_refresh_meta_interval_in_sec": 3600,
+    "peer_info": {
+        "meta": {
+            "version": "2.1.0-huiju"
+        },
+        "peer_id": "FP_CLUSTER"
+    },
+    "version": "2.1.4"
+}

@@ -1,0 +1,208 @@
+#!/bin/bash
+
+set -euo pipefail
+source console/logging.sh
+jq_cmd="infrastructure/jq -crM"
+function load_image() {
+    ip=$($jq_cmd -r '.fp_master_ip' config/config.json)
+    for name in `ls images`;
+        do
+            log_info "load image from $name ..."
+            line=$(docker load -i "images/$name"| grep data_aggregation_tool)
+            log_info "$line"
+            IFS=':' read -r -a array <<< "$line"
+            image_tag="data_aggregation_tool:${array[-1]}"
+            cmd="docker tag $image_tag $ip:5000/$image_tag"
+            log_info "$cmd"
+            $cmd
+            cmd="docker push $ip:5000/$image_tag"
+            log_info "$cmd"
+            $cmd
+        done
+}
+function load_image_ha() {
+    for name in `ls images`;
+        do
+            log_info "load image from $name ..."
+            line=$(docker load -i "images/$name"| grep data_aggregation_tool)
+            log_info "$line"
+            IFS=':' read -r -a array <<< "$line"
+            image_tag="data_aggregation_tool:${array[-1]}"
+            cmd="docker tag $image_tag $image_tag"
+            log_info "$cmd"
+            $cmd
+            cmd="up push $image_tag"
+            log_info "$cmd"
+            $cmd
+        done
+}
+function start() {
+    local cluster=${1:-all}
+   
+    if [[ "$cluster" == "all" ]]; then
+        if [[ $(helm ls --short| grep huiju- | wc -l) -gt 0 ]]; then
+            log_error "Some huiju service still running Will not start"
+            exit -1
+        fi
+        fp_cluster_id=$($jq_cmd -r '.fp_cluster_id' config/config.json)
+        #replace common config
+        python console/configure_all.py "$PWD/config/" "$PWD"/config/chart/config/    
+        cell_clusters=$($jq_cmd -r '.run_subordinate_clusters[]' config/config.json)
+        for cell_cluster in $cell_clusters
+            do
+                start_one "$cell_cluster" "$fp_cluster_id"
+            done
+    else
+        release=${cluster//_/-}
+        release=${release,,}
+        if [[ $(helm ls --short| grep -Fx huiju-"$release" | wc -l) -gt 0 ]]; then
+            log_error "Some huiju service still running for cell: [$cluster], Will not start"
+            exit -1
+        fi
+        fp_cluster_id=$($jq_cmd -r '.fp_cluster_id' config/config.json)
+        #replace common config
+        python console/configure_all.py "$PWD/config/" "$PWD"/config/chart/config/
+        cell_clusters=$($jq_cmd -r '.run_subordinate_clusters[]' config/config.json)
+        contains=0
+        for cell_cluster in $cell_clusters
+            do
+                if [[ "$cell_cluster" == "$cluster" ]]; then
+                    contains=1
+                    start_one "$cell_cluster" "$fp_cluster_id"
+                    break
+                fi
+            done
+        if [[ $contains == 0 ]]; then
+             log_error "cell cluster [$cluster] not found!"
+        fi
+    fi
+}
+function start_one() {
+    local cell_cluster_id=$1
+    local fp_cluster_id=$2
+    local release="huiju-${cell_cluster_id//_/-}"
+    release=${release,,}
+    #starting
+    helm install ./config/chart --name "$release" --set CELL_CLUSTER="$cell_cluster_id",FP_CLUSTER="$fp_cluster_id" --namespace=huiju
+}
+
+function stop() {
+    local release=${1:-all}
+    release=${release//_/-}
+    release=${release,,}
+    if [[ "$release" == "all"  && $(helm ls --short| grep huiju- | wc -l) -gt 0 ]]; then
+        helm ls --short | grep huiju- | xargs -L1 helm delete --purge
+    elif [[ $(helm ls --short| grep -Fx huiju-"$release" | wc -l) -gt 0 ]]; then
+        helm ls --short | grep -Fx huiju-"$release" | xargs -L1 helm delete --purge
+    else
+       log_info 'already stoped'
+    fi
+}
+ret="failed"
+function check(){
+    local cluster=${1:-all}
+    if [[ "$cluster" == "all" ]]; then
+        cell_clusters=$($jq_cmd -r '.run_subordinate_clusters[]' config/config.json)
+        all_success="yes"
+        for cell_cluster in $cell_clusters
+            do
+                check_one "$cell_cluster"
+                if [[ "$ret" == "failed" ]]; then
+                    all_success="no"
+                fi
+            done
+        if [[ "$all_success" == "yes" ]]; then
+            log_info "All service are running!!"
+        fi
+    else
+        check_one "$cluster"
+        if [[ "$ret" == "success" ]]; then
+            log_info "service is running for cell cluster: $cluster"
+        fi
+    fi
+}
+function check_one(){
+    local cluster=$1
+    local release="huiju-${cluster//_/-}"
+    release=${release,,}-
+    if [[ $(kubectl get pods --ignore-not-found=true -n huiju  | grep $release | awk '{if ($3 == "Running") {print "$3"}}' | wc -l) -le 0 ]]; then
+        log_error "service is not start or not in running status for cell cluster: $cluster"
+	    ret="failed"
+    else
+        ret="success"
+    fi
+}
+
+function show_usage_and_exit() {
+    echo "前场内场均可使用:"
+    echo "  load_image    "
+    echo "               从压缩包中加载镜像, 执行 docker push到fp_master_ip:5000"
+    echo "  load_image_ha    "
+    echo "               从压缩包中加载镜像, 执行up push"
+    echo "  start        [cell clusterId/all]"
+    echo "               启动部分或所有服务, 默认值为all"
+    echo "  stop         [cell clusterId/all]"
+    echo "               停止部分或所有服务, 默认值为all"
+    echo "  restart      [cell clusterId/all]"
+    echo "               重启部分或所有服务, 默认值为all"
+    echo "  check        [cell clusterId/all]"
+    echo "               检查部分或所有服务pod状态,如果存在pod且状态为Running,则为正常,其余为失败, 默认值为all"
+    echo "  help         显示此说明"
+    echo
+    echo "例子:"
+    echo "  1.前场部署"
+    echo "  ./huiju start"
+    echo
+    echo "使用方法:"
+    echo "  ./huiju [flags] [options]"
+    exit 1
+}
+
+
+# Validate command
+if [[ $# -lt 1 ]]; then
+    log_warn "Please input correct arguments!"
+    show_usage_and_exit
+fi
+
+args=$1
+case "$args" in
+load_image)
+    shift
+    log_info "Loading image ..."
+    load_image "$@"
+    ;;
+load_image_ha)
+    shift
+    log_info "Loading image ha..."
+    load_image_ha "$@"
+    ;;
+start)
+    shift
+    log_info "Starting ..."
+    start "$@"
+    ;;
+stop)
+    shift
+    log_info "Stopping ..."
+    stop "$@"
+    ;;
+restart)
+    shift
+    log_info "Restarting ..."
+    stop "$@"
+    start "$@"
+    ;;
+check)
+    shift
+    log_info "Checking ..."
+    check "$@"
+    ;;
+help)
+    show_usage_and_exit
+    ;;
+*)
+    log_error "Unsupported arguments."
+    show_usage_and_exit
+    ;;
+esac

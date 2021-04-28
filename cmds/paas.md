@@ -1,5 +1,9 @@
 http://docs.yitu-inc.com/nighthawk/rtd/fp-cell/release~2.2.0/in_field.html
 http://docs.yitu-inc.com/nighthawk/rtd/opod-cell/1.5.4/rollback.html
+
+https://wiki.yitu-inc.com/pages/viewpage.action?pageId=581234768
+http://docs.yitu-inc.com/nighthawk/up/3.1.2/
+
 {
    "hosts": [
      {

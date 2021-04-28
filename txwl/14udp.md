@@ -1,0 +1,12 @@
+sudo lsof -i udp:67|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-67-command-{} >> 14udp.txt
+sudo lsof -i udp:68|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-68-command-{} >> 14udp.txt
+sudo lsof -i udp:111|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-111-command-{} >> 14udp.txt
+sudo lsof -i udp:137|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-137-command-{} >> 14udp.txt
+sudo lsof -i udp:138|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-138-command-{} >> 14udp.txt
+sudo lsof -i udp:964|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-964-command-{} >> 14udp.txt
+sudo lsof -i udp:2049|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-2049-command-{} >> 14udp.txt
+sudo lsof -i udp:8472|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-8472-command-{} >> 14udp.txt
+sudo lsof -i udp:39294|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-39294-command-{} >> 14udp.txt
+sudo lsof -i udp:50589|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-50589-command-{} >> 14udp.txt
+sudo lsof -i udp:55877|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-55877-command-{} >> 14udp.txt
+sudo lsof -i udp:57763|head -n 2|tail -n 1|awk '{print $2}'|xargs -I {} cat /proc/{}/cmdline|tr '\000' ' '|xargs -I {} echo port-57763-command-{} >> 14udp.txt

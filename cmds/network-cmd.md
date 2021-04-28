@@ -24,3 +24,10 @@ nc -zvw1 18.240.1.100 29000
 # tcp dump
 apt-get install tcptump
 tcpdump -i eno1 -vnn dst host X.X.X.X -n -w ping.pcap
+
+#列出监听的端口列表
+netstat -ntl
+netstat -tunlp|grep
+
+
+sudo netstat -tunlp|grep 21

@@ -1,0 +1,39 @@
+{
+    "fp_cluster_id": "sup_perf_1",
+    "fp_master_ip": "127.0.0.1",
+    "dynamic_aggregation_config": {
+        "tool_config": {
+            "p2p_node_ip": "127.0.0.1"
+        },
+        "track_aggregation_config": {
+            "image_flow_node_list": [
+                "127.0.0.1"
+            ],
+            "vehicle_node_list": [
+                "127.0.0.1"
+            ]
+        }
+    },
+    "p2p_config": {
+        "config_based_direct_connection": [
+            {
+                "ip": "127.0.0.2",
+                "peer_id": "huiju_sub_1",
+                "port": 7600
+            },
+            {
+                "ip": "127.0.0.1",
+                "peer_id": "sup_perf_1",
+                "port": 7600
+            }
+        ]
+    },
+    "kv_config": {
+        "hobbit_kv_ip": [
+            "10.40.46.45"
+        ]
+    },
+    "run_subordinate_clusters": [
+        "huiju_sub_1"
+    ]
+}

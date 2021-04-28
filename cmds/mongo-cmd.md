@@ -2,9 +2,9 @@
 
 ## backup restore
 kubectl exec -it mongo-0 bash -n middlewares
-mongodump --host 127.0.0.1 --port 27017 --username admin --password admin --authenticationDatabase admin --archive=/tmp/policy --db=resource-manager --collection=policy
+mongodump --host 127.0.0.1 --port 27017 --username admin --password admin --authenticationDatabase admin --archive=/tmp/policy --db=resource-manager
 
-
+10.105.221.131
 kubectl cp middlewares/mongo-0:/tmp/policy ./policy
 //进入容器
 kubectl exec -it mongo-0 bash -n middlewares
@@ -28,7 +28,6 @@ use resource-manager
 db.camera.find({"attrs.name":"duiqi"})
 
 
-
 ## mongodb array contains
 db.inventory.find( { tags: "red" } )
 
@@ -47,6 +46,8 @@ db.getCollection('policy').find({"attrs.action": /^528/})
 
 kubectl exec -it mongo-0 bash -n middlewares
 mongo -u amdin -p admin
+use resource-manager
+db.camera_group.find()
 use face_platform
 db.history_track_retrieval_query.find().count()
 db.history_track_retrieval_query.getIndexes()
@@ -264,3 +265,7 @@ db.getCollection('policy').updateMany({"$and":[{"meta.type":"camera"},{"meta.use
 db.getCollection('policy').updateMany({"$and":[{"meta.type":"camera"},{"meta.userFilter.#eq.id":"2"}]},{"$set":{"meta.groupAndResource.resources":[]}})
 
 db.getCollection('policy').find({"$and":[{"meta.type":"camera"},{"meta.userFilter.#eq.id":"2"}]}).count()
+
+
+db.getCollection('camera').find({"attrs._group_path": /^0_group:1_group:3_group:27_group:/})
+db.camera.updateMany({"attrs._group_path": /^0_group:1_group:3_group:27_group:/},{"$set":{"meta.administrative_division.custom_region_id":NumberInt(27)}})

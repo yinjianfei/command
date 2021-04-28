@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.huiju.name }}-{{.Release.Name}}-config
+data:
+  {{ .Values.huiju.name | replace "-" "_" }}_camera.conf: |
+    {{ .Files.Get "config/gather_dynamic_resource_config.json" | replace "CELL_CLUSTER" .Values.CELL_CLUSTER | replace "FP_CLUSTER" .Values.FP_CLUSTER | nindent 4 }}
+
+  {{ .Values.huiju.name | replace "-" "_" }}_track.conf: |
+    {{ .Files.Get "config/gather_dynamic_data_config.json" | replace "CELL_CLUSTER" .Values.CELL_CLUSTER | replace "FP_CLUSTER" .Values.FP_CLUSTER | nindent 4 }}
+
+  {{ .Values.huiju.name | replace "-" "_" }}_image_storage_client.conf: |
+    {{ .Files.Get "config/image_storage_client_config.json" | nindent 4 }}
+
+  p2p.conf: |
+    {{ .Files.Get "config/huiju_p2p_config.json" | replace "CELL_CLUSTER" .Values.CELL_CLUSTER | replace "FP_CLUSTER" .Values.FP_CLUSTER | nindent 4 }}
+
+  machine.conf: |
+    {{ .Files.Get "config/machine_config.json" | replace "CELL_CLUSTER" .Values.CELL_CLUSTER | replace "FP_CLUSTER" .Values.FP_CLUSTER | nindent 4 }}

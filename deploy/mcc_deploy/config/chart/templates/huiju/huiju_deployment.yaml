@@ -1,0 +1,168 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.huiju.name }}-{{.Release.Name}}
+  labels:
+    app.kubernetes.io/name: {{ .Values.huiju.name }}-{{.Release.Name}}
+    helm.sh/chart: {{ include "fp.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.huiju.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.huiju.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.huiju.name }}
+        instance: {{ .Release.Name }}
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      initContainers:
+        - image: {{ .Values.images.huiju.name }}:{{ .Values.images.huiju.tag }}
+          imagePullPolicy: {{ .Values.huiju.pullPolicy }}
+          name: huiju-set-init
+          comment: "1.启动时先同步一下摄像头组, TODO后面加个开关，海外版才做这一步"
+          resources:
+            {{- toYaml .Values.huijuCamera.resources | nindent 12 }}
+          workingDir: "/fp/bin"
+          command: ["bash"]
+          args:
+            [
+              "-c",
+              "./gather_resource_set_ficus \
+                -alsologtostderr \
+                --gather_config /etc/huiju/{{ .Values.huiju.name | replace "-" "_" }}_camera.conf \
+                --machine_config /etc/huiju/machine.conf \
+                --adhoc_p2p_client_config '/etc/huiju/p2p.conf'"
+            ]
+          env:
+            - name: LANG
+              value: "C.UTF-8"
+          volumeMounts:
+            - name: {{ .Values.huiju.name }}-{{.Release.Name}}-config
+              mountPath: /etc/huiju/
+            - name: host-time
+              mountPath: /etc/localtime
+            - name: timezone
+              mountPath: /etc/timezone
+
+        - image: {{ .Values.images.huiju.name }}:{{ .Values.images.huiju.tag }}
+          imagePullPolicy: {{ .Values.huiju.pullPolicy }}
+          name: huiju-camera-init
+          comment: "2.启动时先同步一下摄像头，防止启动汇聚track后找不到摄像头，丢太多抓拍，另外TODO这里会同步摄像头的修改和删除，在mcc项目无所谓"
+          resources:
+            {{- toYaml .Values.huijuCamera.resources | nindent 12 }}
+          workingDir: "/fp/bin"
+          command: ["bash"]
+          args:
+            [
+              "-c",
+              "./gather_dynamic_resource_ficus \
+                -alsologtostderr \
+                --gather_config /etc/huiju/{{ .Values.huiju.name | replace "-" "_" }}_camera.conf \
+                --machine_config /etc/huiju/machine.conf \
+                --adhoc_p2p_client_config '/etc/huiju/p2p.conf' \
+                --refresh_gather_interval 600 \
+                --sync_flag true"
+            ]
+          env:
+            - name: LANG
+              value: "C.UTF-8"
+          volumeMounts:
+            - name: {{ .Values.huiju.name }}-{{.Release.Name}}-config
+              mountPath: /etc/huiju/
+            - name: host-time
+              mountPath: /etc/localtime
+            - name: timezone
+              mountPath: /etc/timezone
+
+      containers:
+        - image: {{ .Values.images.huiju.name }}:{{ .Values.images.huiju.tag }}
+          imagePullPolicy: {{ .Values.huiju.pullPolicy }}
+          name: huiju-camera
+          comment: "3.周期的同步摄像头"
+          resources:
+            {{- toYaml .Values.huijuCamera.resources | nindent 12 }}
+          workingDir: "/fp/bin"
+          command: ["bash"]
+          args:
+            [
+              "-c",
+              "./gather_dynamic_resource_ficus \
+                -alsologtostderr \
+                --gather_config /etc/huiju/{{ .Values.huiju.name | replace "-" "_" }}_camera.conf \
+                --machine_config /etc/huiju/machine.conf \
+                --adhoc_p2p_client_config '/etc/huiju/p2p.conf' \
+                --refresh_gather_interval 600"
+            ]
+          env:
+            - name: LANG
+              value: "C.UTF-8"
+          livenessProbe:
+            exec:
+              command:
+              - /bin/bash
+              - -c
+              - ps -fe|grep gather_dynamic_resource_ficus |grep -v grep | grep -v bash
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          volumeMounts:
+            - name: {{ .Values.huiju.name }}-{{.Release.Name}}-config
+              mountPath: /etc/huiju/
+            - name: host-time
+              mountPath: /etc/localtime
+            - name: timezone
+              mountPath: /etc/timezone
+
+        - image: {{ .Values.images.huiju.name }}:{{ .Values.images.huiju.tag }}
+          imagePullPolicy: {{ .Values.huiju.pullPolicy }}
+          name: huiju-track
+          comment: "4.周期的同步抓拍"
+          resources:
+            {{- toYaml .Values.huijuTrack.resources | nindent 12 }}
+          workingDir: "/fp/bin"
+          command: ["bash"]
+          args:
+            [
+              "-c",
+              "./gather_dynamic_data_ficus \
+                -alsologtostderr \
+                --gather_config /etc/huiju/{{ .Values.huiju.name | replace "-" "_" }}_track.conf \
+                --image_storage_client_config /etc/huiju/{{ .Values.huiju.name | replace "-" "_" }}_image_storage_client.conf \
+                --machine_config /etc/huiju/machine.conf \
+                --adhoc_p2p_client_config '/etc/huiju/p2p.conf'"
+            ]
+          env:
+            - name: LANG
+              value: "C.UTF-8"
+          livenessProbe:
+            exec:
+              command:
+              - /bin/bash
+              - -c
+              - ps -fe|grep gather_dynamic_data_ficus |grep -v grep | grep -v bash
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          volumeMounts:
+            - name: {{ .Values.huiju.name }}-{{.Release.Name}}-config
+              mountPath: /etc/huiju/
+            - name: host-time
+              mountPath: /etc/localtime
+            - name: timezone
+              mountPath: /etc/timezone
+          ports:
+            - containerPort: 22122
+              name: metrics-port
+      volumes:
+        - name: {{ .Values.huiju.name }}-{{.Release.Name}}-config
+          configMap:
+            name: {{ .Values.huiju.name }}-{{.Release.Name}}-config
+        - name: host-time
+          hostPath:
+            path: /etc/localtime
+        - name: timezone
+          hostPath:
+            path: /etc/timezone

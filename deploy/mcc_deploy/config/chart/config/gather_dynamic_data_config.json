@@ -1,0 +1,36 @@
+{
+    "image_flow_node_list": [
+        "127.0.0.1"
+    ],
+    "vehicle_node_list": [
+        "127.0.0.1"
+    ],
+    "enable_push_batch_track_retry": false,
+    "push_batch_track_retry_times": 2,
+    "vehicle_node_port": 30084,
+    "gather_vehicle": true,
+    "update_camera_interval": 600,
+    "gather_data_interval_in_ms": 10,
+    "mod_base": 1,
+    "index": 0,
+    "pull_thread_pool_thread_num": 64,
+    "pull_thread_pool_buffer_size": 100,
+    "push_thread_pool_thread_num": 64,
+    "push_thread_pool_buffer_size": 100,
+    "track_data_days": 2,
+    "gather_image_mode": 2,
+    "pull_thread_from_side_cluster_num": 1,
+    "push_thread_to_major_cluster_num": 1,
+    "push_item_buffer_size": 5,
+    "prometheus_config": {
+        "module": "huiju_track",
+        "latency_buckets": [],
+        "exposer": {
+            "port": 22122,
+            "url": "/metrics",
+            "number_of_pool_thread": 1,
+            "number_of_io_thread": 1,
+            "connection_buffer_size": 100
+        }
+    }
+}

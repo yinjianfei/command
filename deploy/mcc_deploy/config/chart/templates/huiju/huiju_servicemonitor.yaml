@@ -1,0 +1,20 @@
+# 监控相关信息
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: txwl-{{.Release.Name}}
+  namespace: huiju
+  labels:
+    prometheus: kube-prometheus
+    app: {{ .Values.huiju.name }}
+    instance: {{ .Release.Name }}
+spec:
+  endpoints:
+  - honorLabels: true
+    port: metrics-port
+    path: /metrics
+    interval: 30s
+  selector:
+    matchLabels:
+      app: {{ .Values.huiju.name }}
+      instance: {{ .Release.Name }}
